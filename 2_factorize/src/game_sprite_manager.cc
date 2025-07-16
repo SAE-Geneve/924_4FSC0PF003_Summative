@@ -1,8 +1,4 @@
-﻿//
-// Created by sebas on 07/07/2025.
-//
-
-#include "game_sprite_manager.h"
+﻿#include "game_sprite_manager.h"
 
 #include <random>
 
@@ -11,6 +7,9 @@ GameSpriteManager::GameSpriteManager(const sf::Vector2u winSize)
     gen_ = std::mt19937(rd_());
     type_dist_ = std::uniform_int_distribution<>(0, 2);
     pos_dist_ = std::uniform_real_distribution<float>(0.0, 1.0);
+
+    texture_manager_.LoadTextures("_assets/splats/");
+
 }
 
 
@@ -26,7 +25,7 @@ void GameSpriteManager::AddSpriteAtMouse(const sf::Vector2f mousePos) {
 }
 
 void GameSpriteManager::AddSprite(sf::Vector2f position) {
-    sprites_.push_back(std::make_unique<GameSprite>(position));
+    sprites_.push_back(std::make_unique<GameSprite>(position, texture_manager_.GetRandomTexture()));
 }
 
 void GameSpriteManager::Update(const float deltaTime) {

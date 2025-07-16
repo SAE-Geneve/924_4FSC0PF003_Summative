@@ -6,6 +6,7 @@
 #define SPRITE_MANAGER_H
 #include <random>
 #include "game_sprite.h"
+#include "texture_manager.h"
 
 
 // Gestionnaire de sprites
@@ -18,6 +19,8 @@ private:
     std::uniform_real_distribution<float> pos_dist_;
 
     sf::Vector2u window_size_;
+
+    TextureManager texture_manager_;
 
     void AddSprite(sf::Vector2f position);
 

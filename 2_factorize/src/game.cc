@@ -49,7 +49,7 @@ void Game::SetupText(){
     instructions_text_.setFillColor(sf::Color::Yellow);
     instructions_text_.setPosition({10, static_cast<float>(window_.getSize().y - 80)});
     instructions_text_.setString(
-        "ESPACE: Sprite aléatoire | CLIC GAUCHE: Sprite à la souris | C: Effacer | S: Stats | ÉCHAP: Quitter");
+        "ESPACE: Sprite aléatoire | CLIC GAUCHE: Sprite à la souris | C: Effacer | ÉCHAP: Quitter");
 }
 
 void Game::HandleMousePressed(const sf::Event::MouseButtonPressed *mousePressed) {

@@ -19,6 +19,7 @@ class Game {
     sf::Text info_text_;
     sf::Text instructions_text_;
 
+
 public:
     Game();
     void Run();

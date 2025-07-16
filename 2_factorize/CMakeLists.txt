@@ -11,10 +11,9 @@ target_link_libraries(2_Factorize PUBLIC SFML::System SFML::Graphics SFML::Windo
 
 # Manage Ressources
 # Delete all and copy
-add_custom_target(2_Factorize_AssetsCopy ALL
+add_custom_command(TARGET 2_Factorize POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/2_factorize/_assets
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/2_factorize/_assets ${CMAKE_BINARY_DIR}/2_factorize/_assets
         COMMENT "🔄 Copying all resources to build directory"
 )
-add_dependencies(2_Factorize 2_Factorize_AssetsCopy)
 

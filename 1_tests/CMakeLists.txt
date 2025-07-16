@@ -10,11 +10,6 @@ endif (ENABLE_TESTING)
 file(GLOB_RECURSE SRC_FILES src/*.cc)
 file(GLOB_RECURSE HEADER_FILES include/*.h)
 
-add_executable(1_Tests ${SRC_FILES} ${HEADER_FILES})
-target_include_directories(1_Tests PRIVATE include/)
-
-target_link_libraries(1_Tests PUBLIC SFML::System SFML::Graphics SFML::Window)
-
 if (ENABLE_TESTING)
     file(GLOB_RECURSE TEST_FILES tests/*.cc)
     add_executable(1_Tests_Tests ${TEST_FILES})

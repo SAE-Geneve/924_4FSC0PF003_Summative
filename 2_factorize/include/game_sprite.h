@@ -16,18 +16,18 @@ class GameSprite {
     sf::Color base_color_;
     sf::Color current_color_;
     float scale_;
-    int texture_idx_;
+
+    sf::Texture texture_;
 
     // Générateur de nombres aléatoires
     std::random_device rd_;
     std::mt19937 gen_;
     std::uniform_int_distribution<> color_dist_;
-    std::uniform_int_distribution<> texture_idx_dist_;
     std::uniform_real_distribution<float> fade_dist_;
     std::uniform_real_distribution<float> scale_dist_;
 
 public:
-    explicit GameSprite(sf::Vector2f pos);
+    explicit GameSprite(sf::Vector2f pos, const sf::Texture& texture);
 
     void Update(float deltaTime);
     void Draw(sf::RenderWindow& window);
